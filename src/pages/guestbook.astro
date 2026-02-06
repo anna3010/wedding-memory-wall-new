@@ -1,9 +1,8 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import MemoryGallery from '../components/MemoryGallery.jsx';
 ---
 
-<MainLayout title="Wedding Memory Wall - Gallery">
+<MainLayout title="Wedding Guest Book - Daniel & Husna">
   <div class="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
     <!-- Animated Background Effects -->
     <div class="fixed inset-0 pointer-events-none">
@@ -12,8 +11,6 @@ import MemoryGallery from '../components/MemoryGallery.jsx';
       <div class="absolute top-20 right-20 text-purple-300 animate-float text-3xl opacity-60" style="animation-delay: 2s">💖</div>
       <div class="absolute bottom-20 left-20 text-pink-300 animate-float text-xl opacity-60" style="animation-delay: 4s">💗</div>
       <div class="absolute bottom-10 right-10 text-purple-300 animate-float text-2xl opacity-60" style="animation-delay: 6s">💝</div>
-      <div class="absolute top-1/3 left-1/4 text-pink-200 animate-float text-2xl opacity-40" style="animation-delay: 8s">💕</div>
-      <div class="absolute top-1/2 right-1/4 text-purple-200 animate-float text-3xl opacity-40" style="animation-delay: 10s">💖</div>
       
       <!-- Sparkle Effects -->
       <div class="absolute top-1/4 left-1/3 text-yellow-300 animate-sparkle text-lg opacity-80" style="animation-delay: 1s">✨</div>
@@ -26,18 +23,7 @@ import MemoryGallery from '../components/MemoryGallery.jsx';
       <div class="absolute inset-0 bg-gradient-to-r from-pink-100/50 to-purple-100/50"></div>
       <div class="relative max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-6 sm:py-8 lg:py-12">
         <div class="text-center">
-          <!-- Animated Hearts Background - Mobile Optimized -->
-          <div class="absolute inset-0 overflow-hidden pointer-events-none">
-            <span class="absolute top-5 left-3 text-pink-300 animate-pulse text-lg sm:text-2xl">💕</span>
-            <span class="absolute top-10 right-3 text-purple-300 animate-pulse text-xl sm:text-3xl" style="animation-delay: 0.5s">💖</span>
-            <span class="absolute bottom-10 left-3 text-pink-300 animate-pulse text-base sm:text-xl" style="animation-delay: 1s">💗</span>
-            <span class="absolute bottom-5 right-3 text-purple-300 animate-pulse text-lg sm:text-2xl" style="animation-delay: 1.5s">💝</span>
-            <!-- Additional hearts for larger screens -->
-            <span class="hidden sm:block absolute top-1/3 left-1/4 text-pink-200 animate-pulse text-2xl" style="animation-delay: 2s">💕</span>
-            <span class="hidden sm:block absolute top-1/2 right-1/4 text-purple-200 animate-pulse text-3xl" style="animation-delay: 2.5s">💖</span>
-          </div>
-          
-          <!-- Couple Names - Mobile First -->
+          <!-- Couple Names -->
           <div class="mb-4 sm:mb-6 lg:mb-8 animate-fade-in">
             <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent mb-2 leading-tight">
               Daniel & Husna
@@ -49,13 +35,13 @@ import MemoryGallery from '../components/MemoryGallery.jsx';
             </div>
           </div>
           
-          <!-- Wedding Memory Wall Title -->
+          <!-- Guest Book Title -->
           <div class="mb-4 sm:mb-6 lg:mb-8 animate-fade-in" style="animation-delay: 0.2s">
             <h2 class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-2 sm:mb-3 lg:mb-4">
-              Wedding Memory Wall
+              Wedding Guest Book
             </h2>
             <p class="text-sm sm:text-base lg:text-lg xl:text-xl text-gray-600 mb-3 sm:mb-4 lg:mb-6 px-2 sm:px-4 max-w-lg sm:max-w-2xl mx-auto leading-relaxed">
-              Share and cherish the beautiful memories from our special day. Every photo, video, and message tells a part of our love story.
+              Leave your heartfelt wishes, congratulations, and memories for the happy couple. Your words will be cherished forever!
             </p>
           </div>
           
@@ -66,7 +52,32 @@ import MemoryGallery from '../components/MemoryGallery.jsx';
             </div>
           </div>
           
-          <!-- Music Player -->
+          <!-- Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 animate-fade-in" style="animation-delay: 0.6s">
+            <a 
+              href="/" 
+              class="inline-flex items-center px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 bg-white text-pink-600 font-semibold rounded-full hover:bg-pink-50 focus:outline-none focus:ring-4 focus:ring-pink-300 transform hover:scale-105 transition-all duration-200 shadow-sm hover:shadow-md border border-pink-200 text-sm sm:text-base lg:text-lg"
+            >
+              <svg class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 mr-1.5 sm:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+              <span class="whitespace-nowrap">View Gallery</span>
+            </a>
+            <a 
+              href="/upload" 
+              class="inline-flex items-center px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 bg-gradient-to-r from-pink-600 to-purple-600 text-white font-semibold rounded-full hover:from-pink-700 hover:to-purple-700 focus:outline-none focus:ring-4 focus:ring-pink-300 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base lg:text-lg hover:confetti"
+            >
+              <svg class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 mr-1.5 sm:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+              </svg>
+              <span class="whitespace-nowrap">Add Memory</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Music Player -->
           <div class="mb-6 sm:mb-8 lg:mb-10 animate-fade-in" style="animation-delay: 0.6s">
             <div class="bg-white/80 backdrop-blur-sm rounded-xl border border-pink-200 p-4 max-w-md mx-auto shadow-sm">
               <div class="flex items-center justify-between mb-3">
@@ -112,50 +123,90 @@ import MemoryGallery from '../components/MemoryGallery.jsx';
             </div>
           </div>
           
-          <!-- Action Buttons -->
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 animate-fade-in" style="animation-delay: 0.8s">
-            <a 
-              href="/upload" 
-              class="inline-flex items-center px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 bg-gradient-to-r from-pink-600 to-purple-600 text-white font-semibold rounded-full hover:from-pink-700 hover:to-purple-700 focus:outline-none focus:ring-4 focus:ring-pink-300 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base lg:text-lg hover:confetti"
-            >
-              <svg class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 mr-1.5 sm:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-              </svg>
-              <span class="whitespace-nowrap">Add Your Memory</span>
-            </a>
+          <!-- Guest Book Section -->
+    <div class="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-6 sm:py-8 lg:py-12">
+      <div class="bg-gradient-to-r from-pink-50 to-purple-50 rounded-xl border border-pink-200 p-6 sm:p-8">
+        <div class="text-center mb-6 sm:mb-8">
+          <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Leave Your Well Wishes</h3>
+          <p class="text-gray-600">Share your love and congratulations for Daniel & Husna</p>
+        </div>
+        
+        <div class="max-w-2xl mx-auto">
+          <div class="bg-white rounded-lg p-4 sm:p-6 shadow-sm mb-6">
+            <form id="guestBookForm">
+              <div class="mb-4">
+                <input 
+                  type="text" 
+                  id="guestName"
+                  placeholder="Your name"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                  required
+                />
+              </div>
+              <textarea 
+                id="guestMessage"
+                placeholder="Write your message to the happy couple..."
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 resize-none"
+                rows="4"
+                required
+              ></textarea>
+              <div class="mt-4 flex justify-end">
+                <button type="submit" class="px-6 py-2 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors font-medium">
+                  Send Message 💕
+                </button>
+              </div>
+            </form>
+          </div>
+          
+          <div id="guestMessages" class="space-y-4">
+            <!-- Initial Messages -->
+            <div class="bg-white rounded-lg p-4 shadow-sm animate-slide-in">
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 bg-pink-200 rounded-full flex items-center justify-center">
+                  <span class="text-pink-600">💕</span>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="font-medium text-gray-900">Sarah M.</span>
+                    <span class="text-xs text-gray-500">2 hours ago</span>
+                  </div>
+                  <p class="text-gray-700 text-sm">Congratulations to the beautiful couple! Wishing you a lifetime of love and happiness together! 💖</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-white rounded-lg p-4 shadow-sm animate-slide-in" style="animation-delay: 0.2s">
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 bg-purple-200 rounded-full flex items-center justify-center">
+                  <span class="text-purple-600">💐</span>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="font-medium text-gray-900">Michael R.</span>
+                    <span class="text-xs text-gray-500">5 hours ago</span>
+                  </div>
+                  <p class="text-gray-700 text-sm">What a beautiful wedding! So happy for you both. May your love story continue to inspire us all! 🎉</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-white rounded-lg p-4 shadow-sm animate-slide-in" style="animation-delay: 0.4s">
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 bg-blue-200 rounded-full flex items-center justify-center">
+                  <span class="text-blue-600">🌟</span>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="font-medium text-gray-900">Emma L.</span>
+                    <span class="text-xs text-gray-500">1 day ago</span>
+                  </div>
+                  <p class="text-gray-700 text-sm">So much love for you both! Your wedding was absolutely magical. Here's to many years of joy and adventure together! ✨</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    
-    <!-- Memory Gallery Section -->
-    <div class="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-6 sm:py-8 lg:py-12">
-      <div class="text-center mb-6 sm:mb-8 lg:mb-12">
-        <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">Memories Shared</h3>
-        <div class="flex items-center justify-center flex-wrap gap-2 sm:gap-3 text-gray-600 text-xs sm:text-sm">
-          <span class="flex items-center gap-1">
-            <span class="text-pink-500">📸</span>
-            <span>Photos</span>
-          </span>
-          <span class="hidden sm:inline">•</span>
-          <span class="flex items-center gap-1">
-            <span class="text-purple-500">🎥</span>
-            <span>Videos</span>
-          </span>
-          <span class="hidden sm:inline">•</span>
-          <span class="flex items-center gap-1">
-            <span class="text-pink-500">🎤</span>
-            <span>Messages</span>
-          </span>
-          <span class="hidden sm:inline">•</span>
-          <span class="flex items-center gap-1">
-            <span class="text-purple-500">💕</span>
-            <span>Love</span>
-          </span>
-        </div>
-      </div>
-      
-      <MemoryGallery client:load />
     </div>
     
     <!-- Footer Section -->
@@ -237,18 +288,6 @@ import MemoryGallery from '../components/MemoryGallery.jsx';
       transform: translateX(-50%);
       animation: confetti 1s ease-out forwards;
       pointer-events: none;
-    }
-    
-    .theme-btn {
-      transition: all 0.3s ease;
-    }
-    
-    .theme-btn:hover {
-      transform: scale(1.1);
-    }
-    
-    .theme-btn.active span {
-      box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.3);
     }
   </style>
 
@@ -376,6 +415,78 @@ import MemoryGallery from '../components/MemoryGallery.jsx';
       }).catch(err => {
         // Autoplay was blocked, that's normal
         console.log('Autoplay blocked, user interaction required');
+      });
+      
+      // Guest Book Functionality
+      const guestBookForm = document.getElementById('guestBookForm');
+      if (!guestBookForm) return;
+      
+      guestBookForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const nameInput = document.getElementById('guestName') as HTMLInputElement;
+        const messageInput = document.getElementById('guestMessage') as HTMLTextAreaElement;
+        const messagesContainer = document.getElementById('guestMessages');
+        
+        if (!nameInput || !messageInput || !messagesContainer) return;
+        
+        const name = nameInput.value?.trim() || '';
+        const message = messageInput.value?.trim() || '';
+        
+        if (!name || !message) {
+          return;
+        }
+        
+        // Create new message element
+        const messageElement = document.createElement('div');
+        messageElement.className = 'bg-white rounded-lg p-4 shadow-sm animate-slide-in';
+        
+        // Random avatar colors and emojis
+        const avatarColors = ['bg-pink-200', 'bg-purple-200', 'bg-blue-200', 'bg-green-200', 'bg-yellow-200'];
+        const avatarEmojis = ['💕', '💐', '🎉', '💖', '🌟'];
+        const randomColor = avatarColors[Math.floor(Math.random() * avatarColors.length)];
+        const randomEmoji = avatarEmojis[Math.floor(Math.random() * avatarEmojis.length)];
+        
+        // Get initials for avatar fallback
+        const initials = name.split(' ').map((word: string) => word[0]).join('').toUpperCase().slice(0, 2);
+        
+        messageElement.innerHTML = `
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 ${randomColor} rounded-full flex items-center justify-center">
+              <span class="text-sm font-medium text-gray-700">${initials}</span>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="font-medium text-gray-900">${name}</span>
+                <span class="text-xs text-gray-500">Just now</span>
+              </div>
+              <p class="text-gray-700 text-sm">${message}</p>
+            </div>
+          </div>
+        `;
+        
+        // Add new message at the top
+        messagesContainer.insertBefore(messageElement, messagesContainer.firstChild);
+        
+        // Clear form
+        nameInput.value = '';
+        messageInput.value = '';
+        
+        // Show success feedback
+        const formTarget = e.target as HTMLFormElement;
+        const button = formTarget.querySelector('button[type="submit"]') as HTMLButtonElement;
+        if (!button) return;
+        
+        const originalText = button.innerHTML;
+        button.innerHTML = 'Message Sent! ✨';
+        button.classList.add('bg-green-600', 'hover:bg-green-700');
+        button.classList.remove('bg-pink-600', 'hover:bg-pink-700');
+        
+        setTimeout(() => {
+          button.innerHTML = originalText;
+          button.classList.remove('bg-green-600', 'hover:bg-green-700');
+          button.classList.add('bg-pink-600', 'hover:bg-pink-700');
+        }, 2000);
       });
     });
   </script>
