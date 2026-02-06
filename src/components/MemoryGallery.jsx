@@ -22,28 +22,14 @@ const MemoryGallery = () => {
     }
   }, []);
 
-  // Fetch memories from API or Supabase
+  // Fetch memories from Supabase
   const fetchMemories = async () => {
     try {
       setLoading(true);
       
       console.log('🔍 FetchMemories called, current session:', JSON.parse(sessionStorage.getItem('weddingMemories') || '[]'));
       
-      let data;
-      if (isSupabaseAvailable()) {
-        // Use Supabase client if available
-        data = await memoriesApi.fetchMemories();
-      } else {
-        // Fallback to API endpoint
-        const response = await fetch('/api/memories');
-        
-        if (!response.ok) {
-          throw new Error('Failed to fetch memories');
-        }
-        
-        const result = await response.json();
-        data = result.memories || [];
-      }
+      const data = await memoriesApi.fetchMemories();
       
       console.log('🔍 Fetched data:', data);
       
@@ -69,10 +55,10 @@ const MemoryGallery = () => {
     
     switch (activeFilter) {
       case 'photo':
-        filtered = memories.filter(memory => memory.type === 'image');
+        filtered = memories.filter(memory => memory.file_type === 'image');
         break;
       case 'video':
-        filtered = memories.filter(memory => memory.type === 'video');
+        filtered = memories.filter(memory => memory.file_type === 'video');
         break;
       default:
         filtered = memories;
@@ -223,7 +209,7 @@ const MemoryGallery = () => {
                 : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
             }`}
           >
-            📸 Photos ({memories.filter(m => m.type === 'image').length})
+            📸 Photos ({memories.filter(m => m.file_type === 'image').length})
           </button>
           <button
             onClick={() => handleFilterChange('video')}
@@ -233,7 +219,7 @@ const MemoryGallery = () => {
                 : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
             }`}
           >
-            🎥 Videos ({memories.filter(m => m.type === 'video').length})
+            🎥 Videos ({memories.filter(m => m.file_type === 'video').length})
           </button>
         </div>
         

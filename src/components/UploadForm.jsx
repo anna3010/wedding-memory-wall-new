@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { memoriesApi } from '../lib/supabase';
 
 const UploadForm = () => {
   const [formData, setFormData] = useState({
@@ -126,45 +127,39 @@ const UploadForm = () => {
     setErrors({});
 
     try {
-      const formDataToSend = new FormData();
-      formDataToSend.append('guestName', formData.guestName);
-      formDataToSend.append('message', formData.message);
+      const uploadedMemories = [];
       
-      // Append all files
-      formData.files.forEach(file => {
-        formDataToSend.append('files', file);
-      });
-
-      const response = await fetch('/api/upload', {
-        method: 'POST',
-        body: formDataToSend
-      });
-
-      if (!response.ok) {
-        throw new Error('Upload failed');
-      }
-
-      const result = await response.json();
-      
-      if (result.success) {
-        // Save to session storage for gallery
-        const currentMemories = JSON.parse(sessionStorage.getItem('weddingMemories') || '[]');
-        const newMemories = Array.isArray(result.data) ? result.data : [result.data];
-        const updatedMemories = [...newMemories, ...currentMemories];
+      // Upload each file separately
+      for (const file of formData.files) {
+        const fileUrl = await memoriesApi.uploadMemory(
+          file,
+          formData.guestName,
+          formData.message
+        );
         
-        console.log('💾 Saving to session storage:', {
-          currentCount: currentMemories.length,
-          newMemories: newMemories,
-          updatedCount: updatedMemories.length
+        uploadedMemories.push({
+          file_url: fileUrl,
+          file_type: file.type.startsWith('audio') ? 'audio' : 'image',
+          guest_name: formData.guestName,
+          message: formData.message,
+          created_at: new Date().toISOString()
         });
-        
-        sessionStorage.setItem('weddingMemories', JSON.stringify(updatedMemories));
-        
-        setSubmitMessage(`${newMemories.length} memory(ies) uploaded successfully! 🎉`);
-        setFormData({ guestName: '', message: '', files: [] });
-      } else {
-        throw new Error(result.message || 'Upload failed');
       }
+      
+      // Save to session storage for gallery
+      const currentMemories = JSON.parse(sessionStorage.getItem('weddingMemories') || '[]');
+      const updatedMemories = [...uploadedMemories, ...currentMemories];
+      
+      console.log('💾 Saving to session storage:', {
+        currentCount: currentMemories.length,
+        uploadedMemories: uploadedMemories,
+        updatedCount: updatedMemories.length
+      });
+      
+      sessionStorage.setItem('weddingMemories', JSON.stringify(updatedMemories));
+      
+      setSubmitMessage(`${uploadedMemories.length} memory(ies) uploaded successfully! 🎉`);
+      setFormData({ guestName: '', message: '', files: [] });
       document.getElementById('files').value = '';
       
     } catch (error) {

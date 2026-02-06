@@ -2,7 +2,7 @@ import { createClient } from '@supabase/supabase-js';
 
 // Supabase configuration for client-side usage
 const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY_LOCAL;
+const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseAnonKey) {
   console.warn('Supabase environment variables not found. Realtime features will be disabled.');
@@ -64,5 +64,43 @@ export const memoriesApi = {
     }
 
     return data;
+  },
+
+  // Upload file and create memory record
+  uploadMemory: async (file, guestName, message) => {
+    if (!isSupabaseAvailable()) {
+      throw new Error('Supabase not available');
+    }
+
+    const fileExt = file.name.split('.').pop();
+    const fileName = `${crypto.randomUUID()}.${fileExt}`;
+
+    // Upload file to storage
+    const { error: uploadError } = await supabase.storage
+      .from('memories')
+      .upload(fileName, file);
+
+    if (uploadError) {
+      throw uploadError;
+    }
+
+    // Get public URL
+    const { data } = supabase.storage
+      .from('memories')
+      .getPublicUrl(fileName);
+
+    // Insert memory record
+    const { error: insertError } = await supabase.from('memories').insert({
+      file_url: data.publicUrl,
+      file_type: file.type.startsWith('audio') ? 'audio' : 'image',
+      guest_name: guestName,
+      message: message
+    });
+
+    if (insertError) {
+      throw insertError;
+    }
+
+    return data.publicUrl;
   }
 };
