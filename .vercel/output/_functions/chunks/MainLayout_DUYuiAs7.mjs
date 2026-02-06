@@ -1,0 +1,22 @@
+import { e as createComponent, g as addAttribute, n as renderHead, o as renderSlot, l as renderScript, r as renderTemplate, h as createAstro } from './astro/server_B-2LxKLH.mjs';
+import 'piccolore';
+import 'clsx';
+/* empty css                             */
+
+const $$Astro = createAstro();
+const $$MainLayout = createComponent(($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
+  Astro2.self = $$MainLayout;
+  const { title } = Astro2.props;
+  return renderTemplate`<html lang="en" data-astro-cid-ouamjn2i> <head><meta charset="UTF-8"><meta name="description" content="Wedding Memory Wall - Daniel & Husna"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator"${addAttribute(Astro2.generator, "content")}><title>${title}</title>${renderHead()}</head> <body data-astro-cid-ouamjn2i> <!-- Cute Aesthetic Header --> <nav class="bg-gradient-to-r from-rose-100 to-indigo-100 border-b border-rose-200 shadow-sm" data-astro-cid-ouamjn2i> <div class="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8" data-astro-cid-ouamjn2i> <div class="flex justify-between items-center h-14 sm:h-16" data-astro-cid-ouamjn2i> <!-- Logo/Brand --> <div class="flex items-center gap-2 sm:gap-3" data-astro-cid-ouamjn2i> <img src="/src/assets/me.png" alt="LoveCrafted Logo" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover shadow-sm border-2 border-white" data-astro-cid-ouamjn2i> <div class="flex flex-col sm:flex-row sm:items-center sm:gap-2" data-astro-cid-ouamjn2i> <h1 class="text-sm sm:text-base font-light italic text-gray-700 font-serif tracking-wide" data-astro-cid-ouamjn2i>
+lovecrafted
+</h1> </div> </div> <!-- Navigation Links --> <div class="flex items-center gap-1 sm:gap-2" data-astro-cid-ouamjn2i> <a href="/" class="flex items-center gap-1 px-2 sm:px-3 py-1.5 sm:py-2 text-rose-600 hover:text-rose-800 hover:bg-rose-50 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200" data-astro-cid-ouamjn2i> <span class="text-sm sm:text-base" data-astro-cid-ouamjn2i>📸</span> <span class="hidden sm:inline" data-astro-cid-ouamjn2i>Gallery</span> <span class="sm:hidden" data-astro-cid-ouamjn2i>Home</span> </a> <a href="/guestbook" class="flex items-center gap-1 px-2 sm:px-3 py-1.5 sm:py-2 text-rose-600 hover:text-rose-800 hover:bg-rose-50 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200" data-astro-cid-ouamjn2i> <span class="text-sm sm:text-base" data-astro-cid-ouamjn2i>💕</span> <span class="hidden sm:inline" data-astro-cid-ouamjn2i>Guest Book</span> <span class="sm:hidden" data-astro-cid-ouamjn2i>Wishes</span> </a> <a href="/upload" class="flex items-center gap-1 px-2 sm:px-3 py-1.5 sm:py-2 text-rose-600 hover:text-rose-800 hover:bg-rose-50 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200" data-astro-cid-ouamjn2i> <span class="text-sm sm:text-base" data-astro-cid-ouamjn2i>💝</span> <span class="hidden sm:inline" data-astro-cid-ouamjn2i>Upload</span> <span class="sm:hidden" data-astro-cid-ouamjn2i>Share</span> </a> </div> </div> </div> </nav> <!-- Main Content --> <main class="min-h-screen" data-astro-cid-ouamjn2i> ${renderSlot($$result, $$slots["default"])} </main> <!-- Cute Footer --> <footer class="bg-gradient-to-r from-rose-100 to-indigo-100 border-t border-rose-200 mt-auto" data-astro-cid-ouamjn2i> <div class="max-w-7xl mx-auto py-4 sm:py-6 px-3 sm:px-4 lg:px-8" data-astro-cid-ouamjn2i> <div class="text-center" data-astro-cid-ouamjn2i> <div class="flex items-center justify-center gap-2 mb-2" data-astro-cid-ouamjn2i> <span class="text-rose-500" data-astro-cid-ouamjn2i>💖</span> <p class="text-sm text-gray-600 font-medium" data-astro-cid-ouamjn2i>
+Made with love for Daniel & Husna
+</p> <span class="text-rose-500" data-astro-cid-ouamjn2i>💖</span> </div> <p class="text-xs text-gray-500 mb-1" data-astro-cid-ouamjn2i>
+created by ishaza arianna
+</p> <p class="text-xs text-gray-400" data-astro-cid-ouamjn2i>
+2026 Wedding Memory Wall • #HusnaHeartsDaniel
+</p> </div> </div> </footer> ${renderScript($$result, "C:/Users/hmm/OneDrive/Documents/wedding-memory-wall-new/src/layouts/MainLayout.astro?astro&type=script&index=0&lang.ts")}</body></html>`;
+}, "C:/Users/hmm/OneDrive/Documents/wedding-memory-wall-new/src/layouts/MainLayout.astro", void 0);
+
+export { $$MainLayout as $ };

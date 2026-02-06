@@ -1,0 +1,493 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Wedding Guest Book - Daniel & Husna">
+  <div class="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
+    <!-- Animated Background Effects -->
+    <div class="fixed inset-0 pointer-events-none">
+      <!-- Floating Hearts -->
+      <div class="absolute top-10 left-10 text-pink-300 animate-float text-2xl opacity-60">💕</div>
+      <div class="absolute top-20 right-20 text-purple-300 animate-float text-3xl opacity-60" style="animation-delay: 2s">💖</div>
+      <div class="absolute bottom-20 left-20 text-pink-300 animate-float text-xl opacity-60" style="animation-delay: 4s">💗</div>
+      <div class="absolute bottom-10 right-10 text-purple-300 animate-float text-2xl opacity-60" style="animation-delay: 6s">💝</div>
+      
+      <!-- Sparkle Effects -->
+      <div class="absolute top-1/4 left-1/3 text-yellow-300 animate-sparkle text-lg opacity-80" style="animation-delay: 1s">✨</div>
+      <div class="absolute top-3/4 right-1/3 text-yellow-300 animate-sparkle text-lg opacity-80" style="animation-delay: 3s">✨</div>
+      <div class="absolute top-1/2 left-1/2 text-yellow-300 animate-sparkle text-lg opacity-80" style="animation-delay: 5s">✨</div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-pink-100/50 to-purple-100/50"></div>
+      <div class="relative max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-6 sm:py-8 lg:py-12">
+        <div class="text-center">
+          <!-- Couple Names -->
+          <div class="mb-4 sm:mb-6 lg:mb-8 animate-fade-in">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent mb-2 leading-tight">
+              Daniel & Husna
+            </h1>
+            <div class="flex items-center justify-center gap-1 sm:gap-2 text-gray-600 text-sm sm:text-base lg:text-lg">
+              <span class="text-pink-500 text-sm sm:text-base">💑</span>
+              <span class="whitespace-nowrap">Together Forever</span>
+              <span class="text-pink-500 text-sm sm:text-base">💑</span>
+            </div>
+          </div>
+          
+          <!-- Guest Book Title -->
+          <div class="mb-4 sm:mb-6 lg:mb-8 animate-fade-in" style="animation-delay: 0.2s">
+            <h2 class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-2 sm:mb-3 lg:mb-4">
+              Wedding Guest Book
+            </h2>
+            <p class="text-sm sm:text-base lg:text-lg xl:text-xl text-gray-600 mb-3 sm:mb-4 lg:mb-6 px-2 sm:px-4 max-w-lg sm:max-w-2xl mx-auto leading-relaxed">
+              Leave your heartfelt wishes, congratulations, and memories for the happy couple. Your words will be cherished forever!
+            </p>
+          </div>
+          
+          <!-- Hashtag -->
+          <div class="mb-6 sm:mb-8 lg:mb-10 animate-fade-in" style="animation-delay: 0.4s">
+            <div class="inline-flex items-center px-3 sm:px-4 lg:px-6 py-1.5 sm:py-2 lg:py-3 bg-gradient-to-r from-pink-100 to-purple-100 rounded-full border border-pink-200">
+              <span class="text-pink-600 font-semibold text-xs sm:text-sm lg:text-base">#HusnaHeartsDaniel</span>
+            </div>
+          </div>
+          
+          <!-- Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 animate-fade-in" style="animation-delay: 0.6s">
+            <a 
+              href="/" 
+              class="inline-flex items-center px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 bg-white text-pink-600 font-semibold rounded-full hover:bg-pink-50 focus:outline-none focus:ring-4 focus:ring-pink-300 transform hover:scale-105 transition-all duration-200 shadow-sm hover:shadow-md border border-pink-200 text-sm sm:text-base lg:text-lg"
+            >
+              <svg class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 mr-1.5 sm:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+              <span class="whitespace-nowrap">View Gallery</span>
+            </a>
+            <a 
+              href="/upload" 
+              class="inline-flex items-center px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 bg-gradient-to-r from-pink-600 to-purple-600 text-white font-semibold rounded-full hover:from-pink-700 hover:to-purple-700 focus:outline-none focus:ring-4 focus:ring-pink-300 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base lg:text-lg hover:confetti"
+            >
+              <svg class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 mr-1.5 sm:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+              </svg>
+              <span class="whitespace-nowrap">Add Memory</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Music Player -->
+          <div class="mb-6 sm:mb-8 lg:mb-10 animate-fade-in" style="animation-delay: 0.6s">
+            <div class="bg-white/80 backdrop-blur-sm rounded-xl border border-pink-200 p-4 max-w-md mx-auto shadow-sm">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-2">
+                  <span class="text-pink-500">🎵</span>
+                  <span class="text-sm font-medium text-gray-700">Wedding Music</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button id="musicToggle" class="text-pink-500 hover:text-pink-600 transition-colors" title="Play/Pause">
+                    <svg id="playIcon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+                    </svg>
+                    <svg id="pauseIcon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                    </svg>
+                  </button>
+                  <button id="musicStop" class="text-gray-400 hover:text-gray-600 transition-colors" title="Stop">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8 7a1 1 0 00-1 1v4a1 1 0 001 1h4a1 1 0 001-1V8a1 1 0 00-1-1H8z" clip-rule="evenodd"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="text-xs text-gray-600 text-center mb-3">
+                <span id="songTitle">Romantic Piano - Bensound</span>
+              </div>
+              <!-- Progress Bar -->
+              <div class="mb-2">
+                <div class="flex items-center justify-between text-xs text-gray-500 mb-1">
+                  <span id="currentTime">0:00</span>
+                  <span id="duration">0:00</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-1.5">
+                  <div id="progressBar" class="bg-pink-500 h-1.5 rounded-full transition-all duration-100" style="width: 0%"></div>
+                </div>
+              </div>
+              <!-- Volume Control -->
+              <div class="flex items-center gap-2">
+                <span class="text-xs text-gray-500">🔊</span>
+                <input type="range" id="volumeControl" min="0" max="100" value="50" class="flex-1 h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                <span id="volumeValue" class="text-xs text-gray-500 w-8">50%</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Guest Book Section -->
+    <div class="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-6 sm:py-8 lg:py-12">
+      <div class="bg-gradient-to-r from-pink-50 to-purple-50 rounded-xl border border-pink-200 p-6 sm:p-8">
+        <div class="text-center mb-6 sm:mb-8">
+          <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Leave Your Well Wishes</h3>
+          <p class="text-gray-600">Share your love and congratulations for Daniel & Husna</p>
+        </div>
+        
+        <div class="max-w-2xl mx-auto">
+          <div class="bg-white rounded-lg p-4 sm:p-6 shadow-sm mb-6">
+            <form id="guestBookForm">
+              <div class="mb-4">
+                <input 
+                  type="text" 
+                  id="guestName"
+                  placeholder="Your name"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                  required
+                />
+              </div>
+              <textarea 
+                id="guestMessage"
+                placeholder="Write your message to the happy couple..."
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 resize-none"
+                rows="4"
+                required
+              ></textarea>
+              <div class="mt-4 flex justify-end">
+                <button type="submit" class="px-6 py-2 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors font-medium">
+                  Send Message 💕
+                </button>
+              </div>
+            </form>
+          </div>
+          
+          <div id="guestMessages" class="space-y-4">
+            <!-- Initial Messages -->
+            <div class="bg-white rounded-lg p-4 shadow-sm animate-slide-in">
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 bg-pink-200 rounded-full flex items-center justify-center">
+                  <span class="text-pink-600">💕</span>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="font-medium text-gray-900">Sarah M.</span>
+                    <span class="text-xs text-gray-500">2 hours ago</span>
+                  </div>
+                  <p class="text-gray-700 text-sm">Congratulations to the beautiful couple! Wishing you a lifetime of love and happiness together! 💖</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-white rounded-lg p-4 shadow-sm animate-slide-in" style="animation-delay: 0.2s">
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 bg-purple-200 rounded-full flex items-center justify-center">
+                  <span class="text-purple-600">💐</span>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="font-medium text-gray-900">Michael R.</span>
+                    <span class="text-xs text-gray-500">5 hours ago</span>
+                  </div>
+                  <p class="text-gray-700 text-sm">What a beautiful wedding! So happy for you both. May your love story continue to inspire us all! 🎉</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-white rounded-lg p-4 shadow-sm animate-slide-in" style="animation-delay: 0.4s">
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 bg-blue-200 rounded-full flex items-center justify-center">
+                  <span class="text-blue-600">🌟</span>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="font-medium text-gray-900">Emma L.</span>
+                    <span class="text-xs text-gray-500">1 day ago</span>
+                  </div>
+                  <p class="text-gray-700 text-sm">So much love for you both! Your wedding was absolutely magical. Here's to many years of joy and adventure together! ✨</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Footer Section -->
+    <div class="mt-12 sm:mt-16 lg:mt-20 bg-gradient-to-r from-pink-100 to-purple-100">
+      <div class="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-6 sm:py-8 lg:py-12 text-center">
+        <div class="mb-3 sm:mb-4">
+          <span class="text-2xl sm:text-3xl lg:text-4xl">💕</span>
+        </div>
+        <h4 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">Thank You!</h4>
+        <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 px-2 sm:px-0 leading-relaxed">
+          For being part of our special day and sharing these precious memories.
+        </p>
+        <div class="flex items-center justify-center gap-1 sm:gap-2 text-pink-600 font-semibold text-sm sm:text-base">
+          <span>💖</span>
+          <span class="whitespace-nowrap">Daniel & Husna</span>
+          <span>💖</span>
+        </div>
+        <div class="mt-3 sm:mt-4">
+          <span class="text-pink-600 font-medium text-xs sm:text-sm">#HusnaHeartsDaniel</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      25% { transform: translateY(-20px) rotate(5deg); }
+      75% { transform: translateY(-10px) rotate(-5deg); }
+    }
+    
+    @keyframes sparkle {
+      0%, 100% { opacity: 0; transform: scale(0); }
+      50% { opacity: 1; transform: scale(1); }
+    }
+    
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes slide-in {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    
+    @keyframes confetti {
+      0% { transform: translateY(0) rotateZ(0deg); }
+      100% { transform: translateY(-100vh) rotateZ(720deg); }
+    }
+    
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .animate-sparkle {
+      animation: sparkle 2s ease-in-out infinite;
+    }
+    
+    .animate-fade-in {
+      animation: fade-in 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    
+    .animate-slide-in {
+      animation: slide-in 0.6s ease-out forwards;
+    }
+    
+    .hover\:confetti:hover {
+      position: relative;
+      overflow: visible;
+    }
+    
+    .hover\:confetti:hover::after {
+      content: '🎊';
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: confetti 1s ease-out forwards;
+      pointer-events: none;
+    }
+  </style>
+
+  <script>
+    // Wedding Music Player Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get DOM elements with null checks
+      const playIcon = document.getElementById('playIcon');
+      const pauseIcon = document.getElementById('pauseIcon');
+      const musicToggle = document.getElementById('musicToggle');
+      const musicStop = document.getElementById('musicStop');
+      const progressBar = document.getElementById('progressBar');
+      const currentTimeEl = document.getElementById('currentTime');
+      const durationEl = document.getElementById('duration');
+      const volumeControl = document.getElementById('volumeControl') as HTMLInputElement;
+      const volumeValue = document.getElementById('volumeValue');
+      const songTitle = document.getElementById('songTitle');
+      
+      // Return if essential elements are missing
+      if (!musicToggle || !playIcon || !pauseIcon || !musicStop || !progressBar || 
+          !currentTimeEl || !durationEl || !volumeControl || !volumeValue || !songTitle) {
+        return;
+      }
+      
+      // Create audio element with romantic wedding music
+      const audio = new Audio('https://www.bensound.com/bensound-music/bensound-romantic.mp3');
+      audio.loop = true;
+      audio.volume = 0.5;
+      
+      // Wedding playlist
+      const playlist = [
+        'A Thousand Years - Christina Perri',
+        'Perfect - Ed Sheeran', 
+        'All of Me - John Legend',
+        'Thinking Out Loud - Ed Sheeran',
+        'Marry You - Bruno Mars'
+      ];
+      let currentSongIndex = 0;
+      
+      // Format time helper
+      function formatTime(seconds: number) {
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins}:${secs.toString().padStart(2, '0')}`;
+      }
+      
+      // Update progress
+      function updateProgress() {
+        if (audio.duration && progressBar && currentTimeEl && durationEl) {
+          const progressPercent = (audio.currentTime / audio.duration) * 100;
+          progressBar.style.width = progressPercent + '%';
+          currentTimeEl.textContent = formatTime(audio.currentTime);
+          durationEl.textContent = formatTime(audio.duration);
+        }
+      }
+      
+      // Play/Pause toggle
+      musicToggle.addEventListener('click', function() {
+        if (audio.paused) {
+          audio.play().then(() => {
+            if (playIcon && pauseIcon) {
+              playIcon.classList.add('hidden');
+              pauseIcon.classList.remove('hidden');
+            }
+          }).catch(err => {
+            console.log('Audio play failed:', err);
+            // Fallback: show a message about autoplay restrictions
+            if (songTitle) {
+              songTitle.textContent = 'Click to enable music (browser restriction)';
+            }
+          });
+        } else {
+          audio.pause();
+          if (playIcon && pauseIcon) {
+            playIcon.classList.remove('hidden');
+            pauseIcon.classList.add('hidden');
+          }
+        }
+      });
+      
+      // Stop button
+      musicStop.addEventListener('click', function() {
+        audio.pause();
+        audio.currentTime = 0;
+        if (playIcon && pauseIcon) {
+          playIcon.classList.remove('hidden');
+          pauseIcon.classList.add('hidden');
+        }
+        updateProgress();
+      });
+      
+      // Volume control
+      volumeControl.addEventListener('input', function() {
+        const volume = Number(this.value) / 100;
+        audio.volume = volume;
+        if (volumeValue) {
+          volumeValue.textContent = this.value + '%';
+        }
+      });
+      
+      // Update progress bar
+      audio.addEventListener('timeupdate', updateProgress);
+      
+      // Handle audio loading
+      audio.addEventListener('loadedmetadata', updateProgress);
+      
+      // Handle audio ending (loop will restart it)
+      audio.addEventListener('ended', function() {
+        currentSongIndex = (currentSongIndex + 1) % playlist.length;
+        if (songTitle) {
+          songTitle.textContent = playlist[currentSongIndex];
+        }
+        updateProgress();
+      });
+      
+      // Initialize
+      updateProgress();
+      
+      // Try to autoplay (may be blocked by browser)
+      audio.play().then(() => {
+        if (playIcon && pauseIcon) {
+          playIcon.classList.add('hidden');
+          pauseIcon.classList.remove('hidden');
+        }
+      }).catch(err => {
+        // Autoplay was blocked, that's normal
+        console.log('Autoplay blocked, user interaction required');
+      });
+      
+      // Guest Book Functionality
+      const guestBookForm = document.getElementById('guestBookForm');
+      if (!guestBookForm) return;
+      
+      guestBookForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const nameInput = document.getElementById('guestName') as HTMLInputElement;
+        const messageInput = document.getElementById('guestMessage') as HTMLTextAreaElement;
+        const messagesContainer = document.getElementById('guestMessages');
+        
+        if (!nameInput || !messageInput || !messagesContainer) return;
+        
+        const name = nameInput.value?.trim() || '';
+        const message = messageInput.value?.trim() || '';
+        
+        if (!name || !message) {
+          return;
+        }
+        
+        // Create new message element
+        const messageElement = document.createElement('div');
+        messageElement.className = 'bg-white rounded-lg p-4 shadow-sm animate-slide-in';
+        
+        // Random avatar colors and emojis
+        const avatarColors = ['bg-pink-200', 'bg-purple-200', 'bg-blue-200', 'bg-green-200', 'bg-yellow-200'];
+        const avatarEmojis = ['💕', '💐', '🎉', '💖', '🌟'];
+        const randomColor = avatarColors[Math.floor(Math.random() * avatarColors.length)];
+        const randomEmoji = avatarEmojis[Math.floor(Math.random() * avatarEmojis.length)];
+        
+        // Get initials for avatar fallback
+        const initials = name.split(' ').map((word: string) => word[0]).join('').toUpperCase().slice(0, 2);
+        
+        messageElement.innerHTML = `
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 ${randomColor} rounded-full flex items-center justify-center">
+              <span class="text-sm font-medium text-gray-700">${initials}</span>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="font-medium text-gray-900">${name}</span>
+                <span class="text-xs text-gray-500">Just now</span>
+              </div>
+              <p class="text-gray-700 text-sm">${message}</p>
+            </div>
+          </div>
+        `;
+        
+        // Add new message at the top
+        messagesContainer.insertBefore(messageElement, messagesContainer.firstChild);
+        
+        // Clear form
+        nameInput.value = '';
+        messageInput.value = '';
+        
+        // Show success feedback
+        const formTarget = e.target as HTMLFormElement;
+        const button = formTarget.querySelector('button[type="submit"]') as HTMLButtonElement;
+        if (!button) return;
+        
+        const originalText = button.innerHTML;
+        button.innerHTML = 'Message Sent! ✨';
+        button.classList.add('bg-green-600', 'hover:bg-green-700');
+        button.classList.remove('bg-pink-600', 'hover:bg-pink-700');
+        
+        setTimeout(() => {
+          button.innerHTML = originalText;
+          button.classList.remove('bg-green-600', 'hover:bg-green-700');
+          button.classList.add('bg-pink-600', 'hover:bg-pink-700');
+        }, 2000);
+      });
+    });
+  </script>
+</MainLayout>
