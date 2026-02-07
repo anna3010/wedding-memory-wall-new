@@ -99,7 +99,7 @@ export const memoriesApi = {
     }
 
     const fileExt = file.name.split('.').pop();
-    const fileName = `${crypto.randomUUID()}.${fileExt}`;
+    const fileName = `${generateUniqueId()}.${fileExt}`;
 
     // Upload file to storage
     const { error: uploadError } = await supabase.storage
