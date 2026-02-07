@@ -17,12 +17,24 @@ export const isSupabaseAvailable = () => {
   return supabase !== null;
 };
 
-// Helper function to generate unique ID with fallback
+// Helper function to generate unique ID with fallback for non-secure contexts
 const generateUniqueId = () => {
   if (typeof crypto !== 'undefined' && crypto.randomUUID) {
     return crypto.randomUUID();
+  } else if (typeof crypto !== 'undefined' && crypto.getRandomValues) {
+    // Fallback for non-secure contexts using getRandomValues
+    const bytes = new Uint8Array(16);
+    crypto.getRandomValues(bytes);
+    const hex = Array.from(bytes, byte => byte.toString(16).padStart(2, '0')).join('');
+    return [
+      hex.substr(0, 8),
+      hex.substr(8, 4),
+      hex.substr(12, 4),
+      hex.substr(16, 4),
+      hex.substr(20, 12)
+    ].join('-');
   } else {
-    // Fallback for older browsers
+    // Ultimate fallback for very old browsers
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
       const r = Math.random() * 16 | 0;
       const v = c === 'x' ? r : (r & 0x3 | 0x8);
