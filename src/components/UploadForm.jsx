@@ -521,10 +521,32 @@ const UploadForm = () => {
               onChange={handleInputChange}
               required={formData.files.length === 0}
               accept="image/*,audio/*,video/*"
-              className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent file:mr-4 file:py-1 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-pink-50 file:text-pink-700 hover:file:bg-pink-100 ${
+              className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent text-sm sm:text-base ${
                 errors.file ? 'border-red-500' : 'border-gray-300'
               }`}
+              style={{
+                fontSize: '16px',
+                padding: '8px 12px',
+                borderRadius: '6px',
+                border: `1px solid ${errors.file ? '#ef4444' : '#d1d5db'}`,
+                outline: 'none'
+              }}
             />
+            <label 
+              htmlFor="files" 
+              className="absolute inset-0 flex items-center justify-center cursor-pointer bg-pink-50 text-pink-700 rounded-md hover:bg-pink-100 transition-colors"
+              style={{
+                fontSize: '14px',
+                fontWeight: '500',
+                margin: '0 8px',
+                padding: '6px 12px'
+              }}
+            >
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+              </svg>
+              Choose Files
+            </label>
           </div>
           <p className="mt-1 text-xs text-gray-500">
             Upload files from your device - Supported formats: Images (JPG, PNG, GIF, WebP), Audio (MP3, WAV, OGG, M4A), and Videos (MP4, WebM, MOV, AVI) - Max size: 10MB for images/audio, 15MB for videos
@@ -595,7 +617,8 @@ const UploadForm = () => {
           <button
             type="submit"
             disabled={!isFormValid || isSubmitting}
-            className="w-full bg-pink-600 text-white py-2 px-4 rounded-md hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors duration-200"
+            className="w-full bg-pink-600 text-white py-3 px-4 rounded-md hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors duration-200 text-base font-medium min-h-[48px]"
+            style={{ minHeight: '48px' }}
           >
             {isSubmitting ? 'Uploading...' : 'Share Memory'}
           </button>
