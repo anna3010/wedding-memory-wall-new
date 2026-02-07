@@ -1,8 +1,10 @@
 import React, { useState, useRef } from 'react';
 
 const MemoryCard = ({ memory }) => {
-  const { guest_name, message, type, url, created_at } = memory;
+  const { guest_name, message, file_type, file_url, created_at } = memory;
   const guestName = guest_name || 'Anonymous';
+  const type = file_type || 'image';
+  const url = file_url;
   const timestamp = created_at;
   
   console.log('🖼️ Rendering MemoryCard:', {
